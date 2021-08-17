@@ -1,0 +1,150 @@
+//типографика
+b, strong {
+    font-weight: $font-weight--700;
+}
+
+p {
+    margin-top: 0;
+}
+
+a {
+    color: $function-link-color;
+    &:hover, &:focus {
+        color: darken($function-link-color, 5%);
+    }
+    &:active {
+        color: darken($function-link-color, 7%);
+    }
+}
+//списки
+ol, ul, dl {
+    list-style: none;
+    margin: 0 0 2rem;
+    padding: 0 0 0 1rem;
+
+    ol, ul, dl {
+        margin: 1rem 0 0;
+    }
+    dd, dt, li {
+        margin-bottom: 1rem;
+    }
+}
+
+ol {
+    list-style: decimal inside;
+}
+
+ul {
+    list-style: disc inside;
+}
+//заголовки
+h1, h2, h3, h4, h5, h6 {
+    width: 100%;
+    font-weight: $font-weight--500;
+    margin-bottom: 2rem;
+    font-family: $font-family;
+    margin-top: 0;
+}
+h1 {
+    font-size: map_get($h1, font-size);
+    line-height: map_get($h1, line-height);
+    letter-spacing: map_get($h1, letter-spacing);
+}
+h2 {
+    font-size: map_get($h2, font-size);
+    line-height: map_get($h2, line-height);
+    letter-spacing: map_get($h2, letter-spacing);
+    font-weight: $font-weight--500;
+}
+h3 {
+    font-size: map_get($h3, font-size);
+    line-height: map_get($h3, line-height);
+    letter-spacing: map_get($h3, letter-spacing);
+}
+h4 {
+    font-size: map_get($h4, font-size);
+    line-height: map_get($h4, line-height);
+    letter-spacing: map_get($h4, letter-spacing);
+}
+h5 {
+    font-size: map_get($h5, font-size);
+    line-height: map_get($h5, line-height);
+    letter-spacing: map_get($h5, letter-spacing);
+}
+h6 {
+    font-size: map_get($h6, font-size);
+    line-height: map_get($h6, line-height);
+    letter-spacing: map_get($h6, letter-spacing);
+}
+//цитаты
+blockquote {
+    border-left: rem(2px) solid $border-color;
+    margin-left: 0;
+    margin-right: 0;
+    padding: 1rem 2rem;
+    font-style: normal;
+}
+
+q, cite {
+    font-style: italic;
+}
+
+//исходный текст
+code {
+    display: block;
+    width: 100%;
+    margin: 0 0 2rem;
+    padding: 1rem 2rem;
+    font-family: $font-family--monospace;
+    white-space: break-word;
+}
+
+pre {
+    display: block;
+    width: 100%;
+    overflow: auto;
+    border-left: rem(2px) solid $border-color;
+    font-family: $font-family--monospace;
+    & > code {
+        white-space: pre;
+    }
+}
+//подчеркивание
+hr {
+    margin: 2rem 0;
+    border: 0;
+    border-bottom: rem(1px) solid $border-color;
+}
+//изображения
+picture {
+    display: block;
+
+    img {
+        display: block;
+        max-width: 100%;
+        margin: auto;
+    }
+}
+
+//таблицы
+table {
+    width: 100%;
+    margin-bottom: 2rem;
+    vertical-align: middle;
+    border-collapse: collapse;
+
+    th, td {
+        padding: 1rem;
+        border-bottom: 1px solid $border-color;
+    }
+
+    tbody {
+        vertical-align: inherit;
+    }
+
+    thead th {
+        text-align: left;
+        vertical-align: inherit;
+        border-bottom-color: $border-color;
+    }
+}

@@ -1,0 +1,111 @@
+$white-color: #ffffff;
+//цвета текста
+$typography-primary-color: #333333;
+$typography-secondary-color:  #adadad;
+$typography-text-color: $typography-primary-color;
+$typography-light-white: rgba(255, 255, 255, 0.2);
+
+//функциональный цвета
+$function-primary-color : #e49566;
+$function-primary-color--hover : lighten($function-primary-color, 5%);
+$function-primary-color--active : darken($function-primary-color, 5%);
+$function-secondary-color : #ff6868;
+$function-link-color : $function-primary-color;
+$function-hover-color: rgba(153, 162, 249, 0.7);
+$function-success-color : #34cd67;
+$function-warning-color : #ffda79;
+$function-error-color : #eb5757;
+
+//цвета темы
+$theme-primary-color: #e49566;
+$theme-light-color: #e7a882;
+$theme-secondary-color: #e7a882;
+$theme-gray-color: #fafafa;
+$bg-primary: #b5f9cc;
+$bg-secondary: #edf6f0;
+$theme-border-color: #e9e9e9;
+
+//остальные цвета
+$border-color: #e9e9e9;
+$disabled-color: rgba(206, 206, 206, 0.2);
+$hover-shadow-color: #99a2f9;
+$table-border-color: #cdcdcd;
+$slider-button-color: #2e2e2e;
+$overlay-color: rgba(27, 27, 27, 0.6);
+//Формы
+$forms-border-color: rgba(135, 135, 135, 0.6);
+
+// Базовая типографика
+
+$font-size--root:             8px;
+
+$font-size:                   rem(16); // rem(16px)
+$font-size--small:            80%;
+
+$font-path:                   '../fonts';
+
+$font-family:                'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+$font-family--monospace:      SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+$font-family--icon:           'icomoon';
+
+$font-weight--100:            100;
+$font-weight--200:            200;
+$font-weight--300:            300;
+$font-weight--400:            400;
+$font-weight--500:            500;
+$font-weight--600:            600;
+$font-weight--700:            700;
+$font-weight--800:            800;
+$font-weight--900:            900;
+
+$font-weight:                 $font-weight--400;
+
+$line-height:                 normal;
+$letter-spacing:              normal;
+
+// Ширины
+
+$h1: (
+    'font-size': rem(40),
+    'line-height': 1.2,
+    'letter-spacing': 0
+);
+$h2: (
+    'font-size': rem(32),
+    'line-height': 1.375,
+    'letter-spacing': 0.01em
+);
+
+$h3: (
+    'font-size': rem(24),
+    'line-height': 1.2,
+    'letter-spacing': 0
+);
+$h4: (
+    'font-size': rem(18),
+    'line-height': 1.2,
+    'letter-spacing': 0
+);
+$h5: (
+    'font-size': rem(16),
+    'line-height': 1.5,
+    'letter-spacing': 0
+);
+$h6: (
+    'font-size': rem(16),
+    'line-height': 1.5,
+    'letter-spacing': 0
+);
+
+//грид
+$content-size: 1640px;
+$content-size--min: 280px;
+$padding-size: 20px;
+$col-count: 12;
+$wrapper: (
+    'content-size':$content-size,
+    'content-size--min':$content-size--min,
+    'padding-size': $padding-size,
+    'col-count': $col-count
+);
+$grid-color: rgba(255, 0, 0, .1);

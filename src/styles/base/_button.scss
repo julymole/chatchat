@@ -1,0 +1,52 @@
+.btn {
+    @include transition();
+    display: inline-block;
+    font-family: $font-family;
+    font-size: 2.5rem;
+    line-height: 1.2;
+    font-weight: 700;
+    text-align: center;
+    padding: 18px;
+    border-radius: 15px;
+    text-decoration: none;
+    &--primary {
+        color: $white-color;
+        background: $theme-primary-color;
+        border: none;
+        &:hover, &:active, &:focus {
+            outline: none;
+            background: $theme-light-color;
+            color: $white-color;
+        }
+    }
+
+	&--link {
+		color: $function-primary-color;
+		text-transform: uppercase;
+		padding: 0;
+		&:hover, &:active, &:focus {
+			outline: none;
+			color: $function-primary-color--hover;
+		}
+
+		&.btn--icon {
+			display: inline-flex;
+			align-items: center;
+
+			.icon {
+				margin-left: 40px;
+				position: relative;
+				@include transition();
+				right: 0;
+			}
+
+			&:hover {
+				.icon{
+
+					right: 10px;
+				}
+			}
+		}
+	}
+
+}

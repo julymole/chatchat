@@ -1,0 +1,167 @@
+//стили страницы
+@import 'base/variables';
+@import 'base/functions';
+@import 'base/mixins';
+
+
+.chat {
+	display: flex;
+	height: 100vh;
+
+	&__users {
+		width: 30%;
+		@include shadow2();
+		padding-right: 2px;
+		background-color: $bg-secondary;
+
+		&-title {
+			padding: 24px;
+			width: 100%;
+			@include shadow();
+			margin: 0;
+			text-align: center;
+			background-color: $white-color;
+		}
+
+		&-list {
+			list-style-type: none;
+			margin: 0;
+			padding: 0;
+			max-height: calc(100vh - 76px);
+			overflow-y: auto;
+
+
+			&::-webkit-scrollbar {
+				width: 4px;
+				background-color: $border-color;
+				border-radius: 4px;
+
+			}
+
+			&::-webkit-scrollbar-thumb {
+				background-color: $forms-border-color;
+				border-radius: 4px;
+			}
+		}
+
+		&-item {
+			padding: 24px 40px;
+			margin: 0;
+			display: flex;
+			flex-direction: column;
+		}
+
+		&-item.active {
+			background-color: $bg-primary;
+		}
+
+		&-name {
+			overflow: hidden;
+			white-space: nowrap;
+			text-overflow: ellipsis;
+			margin-bottom: 12px;
+			font-weight: $font-weight--700;
+			font-size: 18px;
+		}
+
+		&-message {
+			overflow: hidden;
+			white-space: nowrap;
+			text-overflow: ellipsis;
+		}
+	}
+
+	&__window {
+		width: 70%;
+
+		&-top {
+			height: calc(100vh - 60px);
+			background-image: url("../images/bg4.jpg");
+			@include containBg();
+			@include shadow3();
+			display: flex;
+			flex-direction: column;
+			padding: 16px;
+			max-height: calc(100vh - 60px);
+			overflow-y: auto;
+
+
+			&::-webkit-scrollbar {
+				width: 6px;
+				background-color: $typography-light-white;
+				border-radius: 4px;
+				margin-right: 2px;
+
+			}
+
+			&::-webkit-scrollbar-thumb {
+				background-color: $forms-border-color;
+				border-radius: 4px;
+			}
+
+			.message {
+				padding: 16px;
+				border-radius: 8px;
+				@include shadow2();
+				position: relative;
+				z-index: 10;
+				margin-bottom: 8px;
+				max-width: 45%;
+
+				&:after {
+					content: ' ';
+					position: absolute;
+					width: 0;
+					height: 0;
+					border: 15px solid transparent;
+					bottom: 0px;
+					z-index: -1;
+				}
+
+			}
+
+			.message-left {
+				margin-right: auto;
+				margin-left: 16px;
+				background-color: $bg-secondary;
+
+				&:after {
+					border-top: 24px solid $bg-secondary;
+					left: -8px;
+					transform: rotate(-180deg);
+				}
+
+			}
+
+			.message-right {
+				margin-left: auto;
+				background-color: $white-color;
+				margin-right: 10px;
+
+				&:after {
+					border-top: 24px solid $white-color;
+					right: -8px;
+					transform: rotate(180deg);
+				}
+
+			}
+		}
+
+		&-bottom {
+			@include shadow();
+			form {
+				display: flex;
+				align-items: center;
+				padding: 6px 16px;
+			}
+			.field {
+				width: calc(100% - 30px);
+			}
+			.field__input {
+				padding: 16px 40px;
+				border: none;
+
+			}
+		}
+	}
+}

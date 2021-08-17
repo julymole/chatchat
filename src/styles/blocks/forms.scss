@@ -1,0 +1,226 @@
+.field {
+	display: flex;
+	flex-direction: column-reverse;
+	position: relative;
+	cursor: pointer;
+
+	&:first-child {
+		margin-top: 0;
+	}
+
+	&__input {
+		outline: none;
+		display: block;
+		border: 1px solid $forms-border-color;
+		padding: 11px 30px;
+		border-radius: 10px;
+		background-color: $white-color;
+		font-size: rem(18);
+		font-weight: $font-weight;
+		line-height: 1.22;
+		color: $typography-text-color;
+
+		&:focus {
+			border-color: $function-primary-color--hover;
+		}
+
+		&::placeholder {
+			color: $typography-secondary-color;
+			font-weight: $font-weight;
+			font-family: $font-family;
+			font-size: rem(18);
+			line-height: 1.22;
+		}
+
+		&:required {
+			& + .field__title {
+				&::after {
+					content: '*';
+					color: $function-error-color;
+					margin-left: 4px;
+				}
+			}
+		}
+	}
+
+	&__title {
+		font-size: 1.75rem;
+		line-height: 1.57;
+		color: $typography-primary-color;
+		margin-bottom: 4px;
+	}
+
+	&__toggle-password {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		position: absolute;
+		z-index: 1;
+		top: 26px;
+		right: 1px;
+		width: 45px;
+		height: 45px;
+		border: none;
+		padding: 0;
+		background-color: transparent;
+		cursor: pointer;
+
+		&:active, &.active {
+			.icon path {
+				fill: $function-primary-color;
+			}
+		}
+
+		.icon {
+			display: flex;
+			width: 24px;
+			height: 24px;
+
+			svg {
+				width: 100%;
+				height: 100%;
+			}
+
+			path {
+				@include transition();
+			}
+		}
+	}
+
+	ul {
+		margin: 4px 0 0;
+		padding: 0;
+		list-style: none;
+		font-size: rem(16);
+		line-height: rem(20);
+		color: $function-error-color;
+
+		& + .field__input {
+			border-color: $function-error-color;
+		}
+
+		li {
+			margin: 0;
+		}
+	}
+}
+
+/*Стили чекбоксов и радиокнопок*/
+.field-check {
+    display: block;
+    position: relative;
+    cursor: pointer;
+
+    &:first-child {
+        margin-top: 0;
+    }
+
+    &__input {
+        position: absolute;
+        top: 2px;
+        left: 0;
+        width: 18px;
+        height: 18px;
+        margin: 0;
+        opacity: 0;
+
+        &[type=checkbox] {
+            & + .field-check__name {
+                &::before {
+                    @include transition();
+                    content: '';
+                    display: block;
+                    position: absolute;
+                    top: 3px;
+                    left: 0;
+                    width: 18px;
+                    height: 18px;
+                    border: 1px solid $typography-secondary-color;
+                    border-radius: 4px;
+                }
+
+                &::after {
+                    content: '';
+                    position: absolute;
+                    top: 7px;
+                    left: 4px;
+                    width: 10px;
+                    height: 10px;
+                    background-image: url(../images/svg/checkbox-icon.svg);
+                    -webkit-background-size: contain;
+                    background-size: contain;
+                    background-repeat: no-repeat;
+                    background-position: center center;
+                }
+
+                &:hover {
+                    &::before {
+                        border-color: $function-primary-color;
+                    }
+                }
+            }
+
+            &:checked + .field-check__name {
+                &::before {
+                    border-color: $function-primary-color;
+                    background: $function-primary-color;
+                }
+            }
+        }
+
+        &[type=radio] {
+            & + .field-check__name {
+                &::before {
+                    @include transition();
+                    content: '';
+                    display: block;
+                    position: absolute;
+                    top: 1px;
+                    left: 0;
+                    width: 20px;
+                    height: 20px;
+                    border: 2px solid $typography-secondary-color;
+                    border-radius: 50%;
+                }
+
+                &::after {
+                    @include transition();
+                    content: '';
+                    position: absolute;
+                    top: 7px;
+                    left: 6px;
+                    width: 8px;
+                    height: 8px;
+                    background: $function-primary-color;
+                    border-radius: 50%;
+                    opacity: 0;
+                }
+
+                &:hover {
+                    &::before {
+                        border-color: $function-primary-color;
+                    }
+                }
+            }
+
+            &:checked + .field-check__name {
+                &::before {
+                    border-color: $function-primary-color;
+                }
+
+                &::after {
+                    opacity: 1;
+                }
+            }
+        }
+    }
+
+    &__name {
+        display: block;
+        position: relative;
+        font-size: 2rem;
+        line-height: 1.5;
+        color: $typography-primary-color;
+        padding-left: 30px;
+    }
+}
